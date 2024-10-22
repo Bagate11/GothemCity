@@ -172,10 +172,10 @@
                 int StadBreed = 100;
                 int StadHöjd = 25;
 
-                for (int i = 0; i < 50; i ++)
+                for (int f = 0; f < 50; f ++) // ändra det från i till f 
                     personer.Add(new Medborgare(random.Next(StadBreed), random.Next(StadHöjd)));
 
-                for (int h = 0; h < 20; h ++)
+                for (int a = 0; a < 20; a ++) // ändra det från h till a 
                     personer.Add(new Tjuv(random.Next(StadBreed), random.Next(StadHöjd)));
                 for (int j = 0; j < 15;  j ++)
                     personer.Add(new Polis(random.Next(StadBreed), random.Next(StadHöjd)));
