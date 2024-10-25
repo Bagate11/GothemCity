@@ -1,9 +1,9 @@
 namespace GothemCity
 {
-    public class Sak
+    public class Things // ändrade Classen namn från sak tiil Things
     {
         public string Name { get; set; }
-        public Sak(string name)
+        public Things(string name) // ändrade till Things 
         {
             Name = name;
         }
@@ -16,14 +16,14 @@ namespace GothemCity
         public int DirectionX { get; set; }
         public int DirectionY { get; set; }
 
-        public List<Sak> Lagra { get; set; }
+        public List<Things> Lagra { get; set; } // ändrade här till Things
         protected static Random random = new Random();
         public bool Fängslad { get; set; }
         public Person(int x, int y)
         {
             X = x;
             Y = y;
-            Lagra = new List<Sak>();
+            Lagra = new List<Things>(); // ändrade det här också till Things 
             Fängslad = false;
             RandomDirection();
         }
@@ -62,10 +62,10 @@ namespace GothemCity
     {
         public Medborgare(int x, int y) : base(x, y)
         {
-            Lagra.Add(new Sak("Nycklar"));
-            Lagra.Add(new Sak("Telefon"));
-            Lagra.Add(new Sak("Pengar"));
-            Lagra.Add(new Sak("ROLEX"));
+            Lagra.Add(new Things("Nycklar")); // ändrade New Ska till new Things 
+            Lagra.Add(new Things("Telefon"));
+            Lagra.Add(new Things("Pengar"));
+            Lagra.Add(new Things("ROLEX"));
         }
 
         public override void Kontakt(Person other)
@@ -105,7 +105,7 @@ namespace GothemCity
                 polis.Lagra.AddRange(Lagra);
                 Lagra.Clear();
                 Console.WriteLine("Polisen har gripit Tjuven och tagit allt stöldgods!");
-                Thread.Sleep(500);
+                Thread.Sleep(1000); // ändrade Hastigheten 
                 Fängelse();
             }
         }
